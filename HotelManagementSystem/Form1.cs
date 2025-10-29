@@ -1,0 +1,112 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace HotelManagementSystem
+{
+    public partial class formGiris : Form
+    {
+        //05452545454
+        //05454545455
+        public static string connectionString = @"Server=EMIRAY;Database=Hoteldb;Trusted_Connection=True;";
+        string sqlTelefonPersonel = "SELECT pozisyon FROM personel WHERE telefon=@telefon";
+        string sqlIDMusteri = "SELECT IDmusteri FROM musteriler WHERE IDmusteri=@id";
+        //string sqlPozisyon = "SELECT pozisyon FROM personel WHERE IDpersonel=@id"; // artık telefon üzerinden alınacak
+
+        public formGiris()
+        {
+            InitializeComponent();
+        }
+
+        String sifre = "12345";
+
+        private void girisPbtn_Click(object sender, EventArgs e)
+        {
+            string pozisyon = null;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = "SELECT pozisyon FROM personel WHERE telefon=@telefon";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@telefon", Pid_txt.Text); // artık ID değil telefon
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            pozisyon = reader["pozisyon"].ToString();
+                        }
+                    }
+                }
+            }
+
+            if (Psifre_txt.Text == sifre && !string.IsNullOrEmpty(pozisyon))
+            {
+                if (pozisyon == "Ön Büro")
+                {
+                    OnBuroform onBuroform = new OnBuroform();
+                    onBuroform.Show();
+                    this.Hide();
+                }
+                else if (pozisyon == "Müdür")
+                {
+                    //mudurForm mudurForm = new mudurForm();
+                    //mudurForm.Show();
+                    //this.Hide();
+                }
+                else if (pozisyon == "Kat Hizmetleri")
+                {
+                    //kathizmetForm kathizmetForm = new kathizmetForm();
+                    //kathizmetForm.Show();
+                    //this.Hide();
+                }
+                else if (pozisyon == "Depo")
+                {
+                    Envanter envanterform = new Envanter();
+                    envanterform.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                Psifre_txt.Clear();
+                Pid_txt.Clear();
+                MessageBox.Show("Hatalı Şifre veya Telefon Numarası Girdiniz!");
+            }
+        }
+
+        private void girisMbtn_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                if (Msifre_txt.Text == sifre && !string.IsNullOrEmpty(sqlIDMusteri))
+                {
+                    //MusteriForm musteriForm = new MusteriForm();
+                    //musteriForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Msifre_txt.Clear();
+                    Mid_txt.Clear();
+                    MessageBox.Show("Hatalı Şifre veya ID Girdiniz!");
+                }
+
+                conn.Close();
+            }
+
+        }
+    }
+}
