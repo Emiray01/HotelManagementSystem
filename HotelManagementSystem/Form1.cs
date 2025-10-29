@@ -26,7 +26,11 @@ namespace HotelManagementSystem
         }
 
         String sifre = "12345";
-
+        private void formGiris_Load(object sender, EventArgs e)
+        {
+            panelpersonel.Visible = false;
+            panelmusteri.Visible = false;
+        }
         private void girisPbtn_Click(object sender, EventArgs e)
         {
             string pozisyon = null;
@@ -109,6 +113,40 @@ namespace HotelManagementSystem
                 conn.Close();
             }
 
+        }
+
+        private void btngeri2_Click(object sender, EventArgs e)
+        {
+            panelpersonel.Visible = false;
+        }
+
+        private void müşteriGirişiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!panelpersonel.Visible)
+            {
+                MessageBox.Show("Lütfen önce personel giriş panelini kapatın.");
+            }
+            else
+            { 
+                panelmusteri.Visible = true; 
+            }
+        }
+
+        private void btngeri1_Click(object sender, EventArgs e)
+        {
+            panelmusteri.Visible = false;
+        }
+
+        private void personelGirişiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!panelmusteri.Visible)
+            {
+                MessageBox.Show("Lütfen önce müşteri giriş panelini kapatın.");
+            }
+            else
+            {
+                panelpersonel.Visible = true;
+            }
         }
     }
 }
