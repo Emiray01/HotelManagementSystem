@@ -76,6 +76,8 @@ namespace HotelManagementSystem
                     envanterform.Show();
                     this.Hide();
                 }
+                Psifre_txt.Clear();
+                Pid_txt.Clear();
             }
             else
             {

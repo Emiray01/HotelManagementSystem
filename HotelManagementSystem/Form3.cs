@@ -23,6 +23,7 @@ namespace HotelManagementSystem
 
         private void Envanter_Load(object sender, EventArgs e)
         {
+            panelurungiris.Visible = false;
             kategoricbx.Items.AddRange(new string[] { "Temizlik", "İçecek", "Banyo", "Tahıl", "Sebze", "Meyve" });
             lstUrun.View = View.Details;
             lstUrun.FullRowSelect = true;
@@ -94,6 +95,92 @@ namespace HotelManagementSystem
 
             MessageBox.Show("Ürün başarıyla eklendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             UrunListele();
+        }
+
+        private void ürünKaldırmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstUrun.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz ürünü seçin!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Seçili ürünün ID’sini alıyoruz
+            int urunID = Convert.ToInt32(lstUrun.SelectedItems[0].SubItems[0].Text);
+
+            DialogResult sonuc = MessageBox.Show("Seçili ürünü silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (sonuc == DialogResult.Yes)
+            {
+                using (SqlConnection conn = new SqlConnection(formGiris.connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM envanter WHERE IDurun = @id", conn);
+                    cmd.Parameters.AddWithValue("@id", urunID);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Ürün başarıyla silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                UrunListele();
+            }
+        }
+        private void arabtn_Click(object sender, EventArgs e)
+        {
+            string aranan = aratxt.Text.Trim();
+
+            using (SqlConnection conn = new SqlConnection(formGiris.connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd;
+
+                if (string.IsNullOrEmpty(aranan))
+                {
+                    cmd = new SqlCommand(@"SELECT IDurun, urunAdi, kategori, miktar, birim, teminTarihi, aciklama 
+                                   FROM envanter", conn);
+                }
+                else
+                {
+                    cmd = new SqlCommand(@"SELECT IDurun, urunAdi, kategori, miktar, birim, teminTarihi, aciklama 
+                                   FROM envanter 
+                                   WHERE urunAdi LIKE @aranan OR kategori LIKE @aranan OR aciklama LIKE @aranan", conn);
+                    cmd.Parameters.AddWithValue("@aranan", "%" + aranan + "%");
+                }
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    lstUrun.Items.Clear();
+                    while (dr.Read())
+                    {
+                        ListViewItem item = new ListViewItem(dr["IDurun"].ToString());
+                        item.SubItems.Add(dr["urunAdi"].ToString());
+                        item.SubItems.Add(dr["kategori"].ToString());
+                        item.SubItems.Add(dr["miktar"].ToString());
+                        item.SubItems.Add(dr["birim"].ToString());
+                        item.SubItems.Add(dr["teminTarihi"] == DBNull.Value ? "" : Convert.ToDateTime(dr["teminTarihi"]).ToShortDateString());
+                        item.SubItems.Add(dr["aciklama"].ToString());
+                        lstUrun.Items.Add(item);
+                    }
+                }
+            }
+
+        }
+        private void ürünGirişiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelurungiris.Visible = true;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelurungiris.Visible = false;
+        }
+        private void çıkışYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formGiris giris = Application.OpenForms["formGiris"] as formGiris;
+            if (giris != null)
+            {
+                giris.Show();
+            }
+            this.Close();
         }
     }
 }

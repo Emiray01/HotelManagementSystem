@@ -49,7 +49,13 @@
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.krediBankaKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nakitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sistemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelcheckin = new System.Windows.Forms.Panel();
+            this.Geribtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.panelcheckin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstOdaliste
@@ -69,21 +75,21 @@
             // 
             // txtad
             // 
-            this.txtad.Location = new System.Drawing.Point(10, 53);
+            this.txtad.Location = new System.Drawing.Point(15, 44);
             this.txtad.Name = "txtad";
             this.txtad.Size = new System.Drawing.Size(121, 22);
             this.txtad.TabIndex = 1;
             // 
             // txtsoyad
             // 
-            this.txtsoyad.Location = new System.Drawing.Point(10, 97);
+            this.txtsoyad.Location = new System.Drawing.Point(15, 88);
             this.txtsoyad.Name = "txtsoyad";
             this.txtsoyad.Size = new System.Drawing.Size(121, 22);
             this.txtsoyad.TabIndex = 2;
             // 
             // txttc
             // 
-            this.txttc.Location = new System.Drawing.Point(10, 141);
+            this.txttc.Location = new System.Drawing.Point(15, 132);
             this.txttc.Name = "txttc";
             this.txttc.Size = new System.Drawing.Size(121, 22);
             this.txttc.TabIndex = 3;
@@ -91,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 34);
+            this.label1.Location = new System.Drawing.Point(15, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 16);
             this.label1.TabIndex = 4;
@@ -100,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 78);
+            this.label2.Location = new System.Drawing.Point(15, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 16);
             this.label2.TabIndex = 5;
@@ -108,14 +114,14 @@
             // 
             // gtarih
             // 
-            this.gtarih.Location = new System.Drawing.Point(286, 47);
+            this.gtarih.Location = new System.Drawing.Point(291, 38);
             this.gtarih.Name = "gtarih";
             this.gtarih.Size = new System.Drawing.Size(200, 22);
             this.gtarih.TabIndex = 6;
             // 
             // ctarih
             // 
-            this.ctarih.Location = new System.Drawing.Point(286, 91);
+            this.ctarih.Location = new System.Drawing.Point(291, 82);
             this.ctarih.Name = "ctarih";
             this.ctarih.Size = new System.Drawing.Size(200, 22);
             this.ctarih.TabIndex = 7;
@@ -123,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 72);
+            this.label3.Location = new System.Drawing.Point(288, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 9;
@@ -132,7 +138,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 122);
+            this.label4.Location = new System.Drawing.Point(15, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 16);
             this.label4.TabIndex = 8;
@@ -141,7 +147,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(283, 28);
+            this.label5.Location = new System.Drawing.Point(288, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 16);
             this.label5.TabIndex = 10;
@@ -149,7 +155,7 @@
             // 
             // btnChin
             // 
-            this.btnChin.Location = new System.Drawing.Point(531, 173);
+            this.btnChin.Location = new System.Drawing.Point(536, 164);
             this.btnChin.Name = "btnChin";
             this.btnChin.Size = new System.Drawing.Size(101, 23);
             this.btnChin.TabIndex = 11;
@@ -159,7 +165,7 @@
             // 
             // btnChout
             // 
-            this.btnChout.Location = new System.Drawing.Point(670, 173);
+            this.btnChout.Location = new System.Drawing.Point(675, 164);
             this.btnChout.Name = "btnChout";
             this.btnChout.Size = new System.Drawing.Size(101, 23);
             this.btnChout.TabIndex = 12;
@@ -171,7 +177,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.faturaToolStripMenuItem});
+            this.faturaToolStripMenuItem,
+            this.sistemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -182,7 +189,8 @@
             // 
             this.faturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.faturaYazdırToolStripMenuItem,
-            this.ödemeToolStripMenuItem});
+            this.ödemeToolStripMenuItem,
+            this.checkinToolStripMenuItem});
             this.faturaToolStripMenuItem.Name = "faturaToolStripMenuItem";
             this.faturaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.faturaToolStripMenuItem.Text = "Fatura";
@@ -215,23 +223,64 @@
             this.nakitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nakitToolStripMenuItem.Text = "Nakit";
             // 
+            // sistemToolStripMenuItem
+            // 
+            this.sistemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.çıkışYapToolStripMenuItem});
+            this.sistemToolStripMenuItem.Name = "sistemToolStripMenuItem";
+            this.sistemToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.sistemToolStripMenuItem.Text = "Sistem";
+            // 
+            // çıkışYapToolStripMenuItem
+            // 
+            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
+            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
+            // 
+            // checkinToolStripMenuItem
+            // 
+            this.checkinToolStripMenuItem.Name = "checkinToolStripMenuItem";
+            this.checkinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.checkinToolStripMenuItem.Text = "Check-in";
+            this.checkinToolStripMenuItem.Click += new System.EventHandler(this.checkinToolStripMenuItem_Click);
+            // 
+            // panelcheckin
+            // 
+            this.panelcheckin.Controls.Add(this.Geribtn);
+            this.panelcheckin.Controls.Add(this.btnChout);
+            this.panelcheckin.Controls.Add(this.txtad);
+            this.panelcheckin.Controls.Add(this.btnChin);
+            this.panelcheckin.Controls.Add(this.txtsoyad);
+            this.panelcheckin.Controls.Add(this.label5);
+            this.panelcheckin.Controls.Add(this.txttc);
+            this.panelcheckin.Controls.Add(this.label3);
+            this.panelcheckin.Controls.Add(this.label1);
+            this.panelcheckin.Controls.Add(this.label4);
+            this.panelcheckin.Controls.Add(this.label2);
+            this.panelcheckin.Controls.Add(this.ctarih);
+            this.panelcheckin.Controls.Add(this.gtarih);
+            this.panelcheckin.Location = new System.Drawing.Point(0, 31);
+            this.panelcheckin.Name = "panelcheckin";
+            this.panelcheckin.Size = new System.Drawing.Size(800, 190);
+            this.panelcheckin.TabIndex = 14;
+            // 
+            // Geribtn
+            // 
+            this.Geribtn.Location = new System.Drawing.Point(3, 167);
+            this.Geribtn.Name = "Geribtn";
+            this.Geribtn.Size = new System.Drawing.Size(22, 23);
+            this.Geribtn.TabIndex = 13;
+            this.Geribtn.Text = "←";
+            this.Geribtn.UseVisualStyleBackColor = true;
+            this.Geribtn.Click += new System.EventHandler(this.Geribtn_Click);
+            // 
             // OnBuroform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnChout);
-            this.Controls.Add(this.btnChin);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.ctarih);
-            this.Controls.Add(this.gtarih);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txttc);
-            this.Controls.Add(this.txtsoyad);
-            this.Controls.Add(this.txtad);
+            this.Controls.Add(this.panelcheckin);
             this.Controls.Add(this.lstOdaliste);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -240,6 +289,8 @@
             this.Load += new System.EventHandler(this.OnBuroform_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelcheckin.ResumeLayout(false);
+            this.panelcheckin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +318,10 @@
         private System.Windows.Forms.ToolStripMenuItem ödemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem krediBankaKartıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nakitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sistemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkinToolStripMenuItem;
+        private System.Windows.Forms.Panel panelcheckin;
+        private System.Windows.Forms.Button Geribtn;
     }
 }

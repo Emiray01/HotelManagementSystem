@@ -23,6 +23,7 @@ namespace HotelManagementSystem
 
         private void OnBuroform_Load(object sender, EventArgs e)
         {
+            panelcheckin.Visible = false;
             lstOdaliste.View = View.Details;
             lstOdaliste.FullRowSelect = true;
             lstOdaliste.Columns.Clear();
@@ -246,6 +247,26 @@ namespace HotelManagementSystem
         private void krediBankaKartıToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Pos Cihazına Aktarılıyor");
+        }
+
+        private void checkinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelcheckin.Visible = true;
+        }
+
+        private void Geribtn_Click(object sender, EventArgs e)
+        {
+            panelcheckin.Visible = false;
+        }
+
+        private void çıkışYapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formGiris giris = Application.OpenForms["formGiris"] as formGiris;
+            if (giris != null)
+            {
+                giris.Show();
+            }
+            this.Close();
         }
     }
 }
