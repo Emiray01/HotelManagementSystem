@@ -81,12 +81,12 @@ namespace HotelManagementSystem
                     this.Hide();
                 }
                 Psifre_txt.Clear();
-                Pid_txt.Clear();
+                Pid_txt.Text = "05";
             }
             else
             {
                 Psifre_txt.Clear();
-                Pid_txt.Clear();
+                Pid_txt.Text = "05";
                 MessageBox.Show("Hatalı Şifre veya Telefon Numarası Girdiniz!");
             }
         }
@@ -122,14 +122,7 @@ namespace HotelManagementSystem
 
         private void müşteriGirişiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!panelpersonel.Visible)
-            {
-                MessageBox.Show("Lütfen önce personel giriş panelini kapatın.");
-            }
-            else
-            { 
-                panelmusteri.Visible = true; 
-            }
+            panelmusteri.Visible = true;
         }
 
         private void btngeri1_Click(object sender, EventArgs e)
@@ -139,14 +132,7 @@ namespace HotelManagementSystem
 
         private void personelGirişiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!panelmusteri.Visible)
-            {
-                MessageBox.Show("Lütfen önce müşteri giriş panelini kapatın.");
-            }
-            else
-            {
-                panelpersonel.Visible = true;
-            }
+            panelpersonel.Visible = true;
         }
     }
 }

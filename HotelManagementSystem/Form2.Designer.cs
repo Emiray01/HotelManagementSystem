@@ -49,9 +49,9 @@
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.krediBankaKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nakitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelcheckin = new System.Windows.Forms.Panel();
             this.Geribtn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -198,7 +198,7 @@
             // faturaYazdırToolStripMenuItem
             // 
             this.faturaYazdırToolStripMenuItem.Name = "faturaYazdırToolStripMenuItem";
-            this.faturaYazdırToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.faturaYazdırToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.faturaYazdırToolStripMenuItem.Text = "Fatura Yazdır";
             // 
             // ödemeToolStripMenuItem
@@ -207,21 +207,28 @@
             this.krediBankaKartıToolStripMenuItem,
             this.nakitToolStripMenuItem});
             this.ödemeToolStripMenuItem.Name = "ödemeToolStripMenuItem";
-            this.ödemeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ödemeToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.ödemeToolStripMenuItem.Text = "Ödeme";
             // 
             // krediBankaKartıToolStripMenuItem
             // 
             this.krediBankaKartıToolStripMenuItem.Name = "krediBankaKartıToolStripMenuItem";
-            this.krediBankaKartıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.krediBankaKartıToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.krediBankaKartıToolStripMenuItem.Text = "Kredi/Banka kartı";
             this.krediBankaKartıToolStripMenuItem.Click += new System.EventHandler(this.krediBankaKartıToolStripMenuItem_Click);
             // 
             // nakitToolStripMenuItem
             // 
             this.nakitToolStripMenuItem.Name = "nakitToolStripMenuItem";
-            this.nakitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nakitToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.nakitToolStripMenuItem.Text = "Nakit";
+            // 
+            // checkinToolStripMenuItem
+            // 
+            this.checkinToolStripMenuItem.Name = "checkinToolStripMenuItem";
+            this.checkinToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.checkinToolStripMenuItem.Text = "Check-in";
+            this.checkinToolStripMenuItem.Click += new System.EventHandler(this.checkinToolStripMenuItem_Click);
             // 
             // sistemToolStripMenuItem
             // 
@@ -237,13 +244,6 @@
             this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
             this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
-            // 
-            // checkinToolStripMenuItem
-            // 
-            this.checkinToolStripMenuItem.Name = "checkinToolStripMenuItem";
-            this.checkinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.checkinToolStripMenuItem.Text = "Check-in";
-            this.checkinToolStripMenuItem.Click += new System.EventHandler(this.checkinToolStripMenuItem_Click);
             // 
             // panelcheckin
             // 
