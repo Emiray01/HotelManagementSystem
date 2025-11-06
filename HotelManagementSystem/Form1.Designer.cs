@@ -43,9 +43,9 @@
             this.müşteriGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personelGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelpersonel = new System.Windows.Forms.Panel();
+            this.btngeri2 = new System.Windows.Forms.Button();
             this.panelmusteri = new System.Windows.Forms.Panel();
             this.btngeri1 = new System.Windows.Forms.Button();
-            this.btngeri2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelpersonel.SuspendLayout();
             this.panelmusteri.SuspendLayout();
@@ -74,6 +74,7 @@
             // 
             this.Psifre_txt.Location = new System.Drawing.Point(33, 73);
             this.Psifre_txt.Name = "Psifre_txt";
+            this.Psifre_txt.PasswordChar = '*';
             this.Psifre_txt.Size = new System.Drawing.Size(100, 22);
             this.Psifre_txt.TabIndex = 3;
             // 
@@ -134,6 +135,7 @@
             // 
             this.Msifre_txt.Location = new System.Drawing.Point(12, 76);
             this.Msifre_txt.Name = "Msifre_txt";
+            this.Msifre_txt.PasswordChar = '*';
             this.Msifre_txt.Size = new System.Drawing.Size(100, 22);
             this.Msifre_txt.TabIndex = 3;
             // 
@@ -160,14 +162,14 @@
             // müşteriGirişiToolStripMenuItem
             // 
             this.müşteriGirişiToolStripMenuItem.Name = "müşteriGirişiToolStripMenuItem";
-            this.müşteriGirişiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.müşteriGirişiToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.müşteriGirişiToolStripMenuItem.Text = "Müşteri Girişi";
             this.müşteriGirişiToolStripMenuItem.Click += new System.EventHandler(this.müşteriGirişiToolStripMenuItem_Click);
             // 
             // personelGirişiToolStripMenuItem
             // 
             this.personelGirişiToolStripMenuItem.Name = "personelGirişiToolStripMenuItem";
-            this.personelGirişiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.personelGirişiToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.personelGirişiToolStripMenuItem.Text = "Personel Girişi";
             this.personelGirişiToolStripMenuItem.Click += new System.EventHandler(this.personelGirişiToolStripMenuItem_Click);
             // 
@@ -179,10 +181,20 @@
             this.panelpersonel.Controls.Add(this.Psifre_txt);
             this.panelpersonel.Controls.Add(this.Pid_txt);
             this.panelpersonel.Controls.Add(this.girisPbtn);
-            this.panelpersonel.Location = new System.Drawing.Point(0, 32);
+            this.panelpersonel.Location = new System.Drawing.Point(0, 34);
             this.panelpersonel.Name = "panelpersonel";
             this.panelpersonel.Size = new System.Drawing.Size(788, 420);
             this.panelpersonel.TabIndex = 9;
+            // 
+            // btngeri2
+            // 
+            this.btngeri2.Location = new System.Drawing.Point(12, 384);
+            this.btngeri2.Name = "btngeri2";
+            this.btngeri2.Size = new System.Drawing.Size(21, 23);
+            this.btngeri2.TabIndex = 10;
+            this.btngeri2.Text = "←";
+            this.btngeri2.UseVisualStyleBackColor = true;
+            this.btngeri2.Click += new System.EventHandler(this.btngeri2_Click);
             // 
             // panelmusteri
             // 
@@ -206,16 +218,6 @@
             this.btngeri1.Text = "←";
             this.btngeri1.UseVisualStyleBackColor = true;
             this.btngeri1.Click += new System.EventHandler(this.btngeri1_Click);
-            // 
-            // btngeri2
-            // 
-            this.btngeri2.Location = new System.Drawing.Point(12, 384);
-            this.btngeri2.Name = "btngeri2";
-            this.btngeri2.Size = new System.Drawing.Size(21, 23);
-            this.btngeri2.TabIndex = 10;
-            this.btngeri2.Text = "←";
-            this.btngeri2.UseVisualStyleBackColor = true;
-            this.btngeri2.Click += new System.EventHandler(this.btngeri2_Click);
             // 
             // formGiris
             // 

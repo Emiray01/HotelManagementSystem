@@ -15,6 +15,7 @@ namespace HotelManagementSystem
     {
         //05452545454
         //05454545455
+        //05341256324
         public static string connectionString = @"Server=EMIRAY;Database=Hoteldb;Trusted_Connection=True;";
         string sqlTelefonPersonel = "SELECT pozisyon FROM personel WHERE telefon=@telefon";
         string sqlIDMusteri = "SELECT IDmusteri FROM musteriler WHERE IDmusteri=@id";
@@ -70,9 +71,9 @@ namespace HotelManagementSystem
                 }
                 else if (pozisyon == "Kat Hizmetleri")
                 {
-                    //kathizmetForm kathizmetForm = new kathizmetForm();
-                    //kathizmetForm.Show();
-                    //this.Hide();
+                    kathizmet kathizmetForm = new kathizmet();
+                    kathizmetForm.Show();
+                    this.Hide();
                 }
                 else if (pozisyon == "Depo")
                 {
