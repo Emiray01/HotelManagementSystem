@@ -20,7 +20,7 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
-
+        //loadda odaları listview üzerinden listeliyor
         private void OnBuroform_Load(object sender, EventArgs e)
         {
             panelcheckin.Visible = false;
@@ -45,7 +45,6 @@ namespace HotelManagementSystem
         {
             if (lstOdaliste.SelectedItems.Count > 0)
             {
-                // Sadece ilk kolon (oda numarası) alınıyor
                 seciliOdaNo = Convert.ToInt32(lstOdaliste.SelectedItems[0].SubItems[0].Text);
             }
             else

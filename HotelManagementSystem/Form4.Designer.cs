@@ -39,6 +39,7 @@
             this.btnonay = new System.Windows.Forms.Button();
             this.lstsiparis = new System.Windows.Forms.ListView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pnlodatem = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.pnlsipariş.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,7 @@
             this.odaTemizlikToolStripMenuItem.Name = "odaTemizlikToolStripMenuItem";
             this.odaTemizlikToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.odaTemizlikToolStripMenuItem.Text = "Oda Temizlik";
+            this.odaTemizlikToolStripMenuItem.Click += new System.EventHandler(this.odaTemizlikToolStripMenuItem_Click);
             // 
             // değişimToolStripMenuItem
             // 
@@ -88,7 +90,7 @@
             this.pnlsipariş.Controls.Add(this.btngeri1);
             this.pnlsipariş.Controls.Add(this.btnonay);
             this.pnlsipariş.Controls.Add(this.lstsiparis);
-            this.pnlsipariş.Location = new System.Drawing.Point(0, 31);
+            this.pnlsipariş.Location = new System.Drawing.Point(0, 40);
             this.pnlsipariş.Name = "pnlsipariş";
             this.pnlsipariş.Size = new System.Drawing.Size(800, 421);
             this.pnlsipariş.TabIndex = 1;
@@ -126,11 +128,19 @@
             // 
             this.timer1.Interval = 500;
             // 
+            // pnlodatem
+            // 
+            this.pnlodatem.Location = new System.Drawing.Point(0, 31);
+            this.pnlodatem.Name = "pnlodatem";
+            this.pnlodatem.Size = new System.Drawing.Size(800, 438);
+            this.pnlodatem.TabIndex = 2;
+            // 
             // kathizmet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlodatem);
             this.Controls.Add(this.pnlsipariş);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -157,5 +167,6 @@
         private System.Windows.Forms.ListView lstsiparis;
         private System.Windows.Forms.Button btngeri1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel pnlodatem;
     }
 }

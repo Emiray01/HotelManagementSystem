@@ -32,6 +32,7 @@ namespace HotelManagementSystem
             panelpersonel.Visible = false;
             panelmusteri.Visible = false;
         }
+        //telefon numarasına göre veri tabanından kontrol ile gerekli formu açar
         private void girisPbtn_Click(object sender, EventArgs e)
         {
             string pozisyon = null;
@@ -43,7 +44,7 @@ namespace HotelManagementSystem
                 string sql = "SELECT pozisyon FROM personel WHERE telefon=@telefon";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@telefon", Pid_txt.Text); // artık ID değil telefon
+                    cmd.Parameters.AddWithValue("@telefon", Pid_txt.Text);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -115,7 +116,33 @@ namespace HotelManagementSystem
             }
 
         }
+        //şifreyi görünür görünmez yapma
+        private void sifgoster_Click(object sender, EventArgs e)
+        {
+            Psifre_txt.PasswordChar = '\0';
+            sifgoster.Visible = false;
+            sifgizle.Visible = true;
+        }
+        private void sifgizle_Click(object sender, EventArgs e)
+        {
+            Psifre_txt.PasswordChar = '*';
+            sifgizle.Visible = false;
+            sifgoster.Visible = true;
+        }
+        private void sifgoster1_Click(object sender, EventArgs e)
+        {
+            Msifre_txt.PasswordChar = '\0';
+            sifgoster1.Visible = false;
+            sifgizle1.Visible = true;
+        }
 
+        private void sifgizle1_Click(object sender, EventArgs e)
+        {
+            Msifre_txt.PasswordChar = '*';
+            sifgizle1.Visible = false;
+            sifgoster1.Visible = true;
+        }
+        //panellerin visible kısmı
         private void btngeri2_Click(object sender, EventArgs e)
         {
             panelpersonel.Visible = false;
@@ -135,5 +162,7 @@ namespace HotelManagementSystem
         {
             panelpersonel.Visible = true;
         }
+
+
     }
 }

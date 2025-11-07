@@ -20,6 +20,7 @@ namespace HotelManagementSystem
         }
         private void kathizmet_Load(object sender, EventArgs e)
         {
+            pnlodatem.Visible = false;
             pnlsipariş.Visible = false;
             lstsiparis.View = View.Details;
             lstsiparis.FullRowSelect = true;
@@ -27,7 +28,7 @@ namespace HotelManagementSystem
             lstsiparis.Columns.Clear();
 
             lstsiparis.Columns.Add("Sipariş ID", 80);
-            lstsiparis.Columns.Add("oda ID", 80);
+            lstsiparis.Columns.Add("Oda No", 80);
             lstsiparis.Columns.Add("Ürün", 150);
             lstsiparis.Columns.Add("Durum", 120);
             siparisListele();
@@ -81,10 +82,14 @@ namespace HotelManagementSystem
         {
             pnlsipariş.Visible = true;
         }
-
+        private void odaTemizlikToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlodatem.Visible = true;
+        }
         private void btngeri1_Click(object sender, EventArgs e)
         {
             pnlsipariş.Visible = false;
         }
+
     }
 }
