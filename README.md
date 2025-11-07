@@ -1,1 +1,1 @@
-This is a hotel management system project. I prepared it for my Vocational Practice and Project course at university.
+This is a hotel management system project that I did for my Vocational Practice and Project Course
