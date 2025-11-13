@@ -17,7 +17,6 @@ namespace HotelManagementSystem
         //05454545455
         //05341256324
         public static string connectionString = @"Server=EMIRAY;Database=Hoteldb;Trusted_Connection=True;";
-        string sqlTelefonPersonel = "SELECT pozisyon FROM personel WHERE telefon=@telefon";
         string sqlIDMusteri = "SELECT IDmusteri FROM musteriler WHERE IDmusteri=@id";
         //string sqlPozisyon = "SELECT pozisyon FROM personel WHERE IDpersonel=@id"; // artık telefon üzerinden alınacak
 

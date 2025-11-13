@@ -40,15 +40,22 @@
             this.lstsiparis = new System.Windows.Forms.ListView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlodatem = new System.Windows.Forms.Panel();
+            this.Temizbitbtn = new System.Windows.Forms.Button();
+            this.btngeri2 = new System.Windows.Forms.Button();
+            this.lsttemizlik = new System.Windows.Forms.ListView();
+            this.sistemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlsipariş.SuspendLayout();
+            this.pnlodatem.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hizmetlerToolStripMenuItem});
+            this.hizmetlerToolStripMenuItem,
+            this.sistemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -90,14 +97,14 @@
             this.pnlsipariş.Controls.Add(this.btngeri1);
             this.pnlsipariş.Controls.Add(this.btnonay);
             this.pnlsipariş.Controls.Add(this.lstsiparis);
-            this.pnlsipariş.Location = new System.Drawing.Point(0, 40);
+            this.pnlsipariş.Location = new System.Drawing.Point(0, 71);
             this.pnlsipariş.Name = "pnlsipariş";
             this.pnlsipariş.Size = new System.Drawing.Size(800, 421);
             this.pnlsipariş.TabIndex = 1;
             // 
             // btngeri1
             // 
-            this.btngeri1.Location = new System.Drawing.Point(12, 177);
+            this.btngeri1.Location = new System.Drawing.Point(3, 3);
             this.btngeri1.Name = "btngeri1";
             this.btngeri1.Size = new System.Drawing.Size(23, 23);
             this.btngeri1.TabIndex = 2;
@@ -107,9 +114,9 @@
             // 
             // btnonay
             // 
-            this.btnonay.Location = new System.Drawing.Point(657, 175);
+            this.btnonay.Location = new System.Drawing.Point(666, 3);
             this.btnonay.Name = "btnonay";
-            this.btnonay.Size = new System.Drawing.Size(131, 26);
+            this.btnonay.Size = new System.Drawing.Size(131, 34);
             this.btnonay.TabIndex = 1;
             this.btnonay.Text = "Sipariş teslim";
             this.btnonay.UseVisualStyleBackColor = true;
@@ -118,9 +125,9 @@
             // lstsiparis
             // 
             this.lstsiparis.HideSelection = false;
-            this.lstsiparis.Location = new System.Drawing.Point(0, 207);
+            this.lstsiparis.Location = new System.Drawing.Point(0, 88);
             this.lstsiparis.Name = "lstsiparis";
-            this.lstsiparis.Size = new System.Drawing.Size(800, 211);
+            this.lstsiparis.Size = new System.Drawing.Size(800, 330);
             this.lstsiparis.TabIndex = 0;
             this.lstsiparis.UseCompatibleStateImageBehavior = false;
             // 
@@ -130,10 +137,57 @@
             // 
             // pnlodatem
             // 
+            this.pnlodatem.Controls.Add(this.Temizbitbtn);
+            this.pnlodatem.Controls.Add(this.btngeri2);
+            this.pnlodatem.Controls.Add(this.lsttemizlik);
             this.pnlodatem.Location = new System.Drawing.Point(0, 31);
             this.pnlodatem.Name = "pnlodatem";
             this.pnlodatem.Size = new System.Drawing.Size(800, 438);
             this.pnlodatem.TabIndex = 2;
+            // 
+            // Temizbitbtn
+            // 
+            this.Temizbitbtn.Location = new System.Drawing.Point(669, 0);
+            this.Temizbitbtn.Name = "Temizbitbtn";
+            this.Temizbitbtn.Size = new System.Drawing.Size(131, 34);
+            this.Temizbitbtn.TabIndex = 2;
+            this.Temizbitbtn.Text = "Temizliği bitir";
+            this.Temizbitbtn.UseVisualStyleBackColor = true;
+            this.Temizbitbtn.Click += new System.EventHandler(this.Temizbitbtn_Click);
+            // 
+            // btngeri2
+            // 
+            this.btngeri2.Location = new System.Drawing.Point(3, 3);
+            this.btngeri2.Name = "btngeri2";
+            this.btngeri2.Size = new System.Drawing.Size(20, 23);
+            this.btngeri2.TabIndex = 1;
+            this.btngeri2.Text = "←";
+            this.btngeri2.UseVisualStyleBackColor = true;
+            this.btngeri2.Click += new System.EventHandler(this.btngeri2_Click);
+            // 
+            // lsttemizlik
+            // 
+            this.lsttemizlik.HideSelection = false;
+            this.lsttemizlik.Location = new System.Drawing.Point(3, 87);
+            this.lsttemizlik.Name = "lsttemizlik";
+            this.lsttemizlik.Size = new System.Drawing.Size(794, 320);
+            this.lsttemizlik.TabIndex = 0;
+            this.lsttemizlik.UseCompatibleStateImageBehavior = false;
+            // 
+            // sistemToolStripMenuItem
+            // 
+            this.sistemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.çıkışYapToolStripMenuItem});
+            this.sistemToolStripMenuItem.Name = "sistemToolStripMenuItem";
+            this.sistemToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.sistemToolStripMenuItem.Text = "Sistem";
+            // 
+            // çıkışYapToolStripMenuItem
+            // 
+            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
+            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
             // kathizmet
             // 
@@ -150,6 +204,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlsipariş.ResumeLayout(false);
+            this.pnlodatem.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,5 +223,10 @@
         private System.Windows.Forms.Button btngeri1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel pnlodatem;
+        private System.Windows.Forms.ListView lsttemizlik;
+        private System.Windows.Forms.Button btngeri2;
+        private System.Windows.Forms.Button Temizbitbtn;
+        private System.Windows.Forms.ToolStripMenuItem sistemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem çıkışYapToolStripMenuItem;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Cryptography;
 
 namespace HotelManagementSystem
 {
@@ -223,7 +224,10 @@ namespace HotelManagementSystem
                     WHERE IDoda IN (SELECT IDoda FROM odalar WHERE odanumara = @odaNo)", conn, trans);
                     cmdRez.Parameters.AddWithValue("@odaNo", seciliOdaID);
                     cmdRez.ExecuteNonQuery();
-
+                    SqlCommand cmd2 = new SqlCommand("INSERT INTO TemizlikIstekleri (OdaID, Tarih, Durum) VALUES (@odaID, @tarih, 0)", conn, trans);
+                    cmd2.Parameters.AddWithValue("@odaID", seciliOdaID);
+                    cmd2.Parameters.AddWithValue("@tarih", DateTime.Now);
+                    cmd2.ExecuteNonQuery();
                     trans.Commit();
 
                     MessageBox.Show("Check-out işlemi başarıyla tamamlandı!");
