@@ -88,6 +88,7 @@ namespace HotelManagementSystem
                     {
                         while (dr.Read())
                         {
+                            Console.WriteLine($"ID: {dr["IDsiparis"]}, Durum: {dr["durum"]}");//debug
                             ListViewItem item = new ListViewItem(dr["IDsiparis"].ToString());
                             item.SubItems.Add(dr["IDoda"].ToString());
                             item.SubItems.Add(dr["urun"].ToString());
@@ -179,7 +180,6 @@ namespace HotelManagementSystem
         {
             pnlodatem.Visible = true;
         }
-
         private void btngeri1_Click(object sender, EventArgs e)
         {
             pnlsipariş.Visible = false;
@@ -199,5 +199,7 @@ namespace HotelManagementSystem
             }
             this.Close();
         }
+
+
     }
 }

@@ -33,7 +33,8 @@
             this.hizmetlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.siparişlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odaTemizlikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.değişimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sistemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlsipariş = new System.Windows.Forms.Panel();
             this.btngeri1 = new System.Windows.Forms.Button();
             this.btnonay = new System.Windows.Forms.Button();
@@ -43,8 +44,6 @@
             this.Temizbitbtn = new System.Windows.Forms.Button();
             this.btngeri2 = new System.Windows.Forms.Button();
             this.lsttemizlik = new System.Windows.Forms.ListView();
-            this.sistemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlsipariş.SuspendLayout();
             this.pnlodatem.SuspendLayout();
@@ -66,8 +65,7 @@
             // 
             this.hizmetlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.siparişlerToolStripMenuItem,
-            this.odaTemizlikToolStripMenuItem,
-            this.değişimToolStripMenuItem});
+            this.odaTemizlikToolStripMenuItem});
             this.hizmetlerToolStripMenuItem.Name = "hizmetlerToolStripMenuItem";
             this.hizmetlerToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.hizmetlerToolStripMenuItem.Text = "Hizmetler";
@@ -86,18 +84,27 @@
             this.odaTemizlikToolStripMenuItem.Text = "Oda Temizlik";
             this.odaTemizlikToolStripMenuItem.Click += new System.EventHandler(this.odaTemizlikToolStripMenuItem_Click);
             // 
-            // değişimToolStripMenuItem
+            // sistemToolStripMenuItem
             // 
-            this.değişimToolStripMenuItem.Name = "değişimToolStripMenuItem";
-            this.değişimToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.değişimToolStripMenuItem.Text = "Değişim";
+            this.sistemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.çıkışYapToolStripMenuItem});
+            this.sistemToolStripMenuItem.Name = "sistemToolStripMenuItem";
+            this.sistemToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.sistemToolStripMenuItem.Text = "Sistem";
+            // 
+            // çıkışYapToolStripMenuItem
+            // 
+            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
+            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
             // pnlsipariş
             // 
             this.pnlsipariş.Controls.Add(this.btngeri1);
             this.pnlsipariş.Controls.Add(this.btnonay);
             this.pnlsipariş.Controls.Add(this.lstsiparis);
-            this.pnlsipariş.Location = new System.Drawing.Point(0, 71);
+            this.pnlsipariş.Location = new System.Drawing.Point(0, 31);
             this.pnlsipariş.Name = "pnlsipariş";
             this.pnlsipariş.Size = new System.Drawing.Size(800, 421);
             this.pnlsipariş.TabIndex = 1;
@@ -124,8 +131,9 @@
             // 
             // lstsiparis
             // 
+            this.lstsiparis.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lstsiparis.HideSelection = false;
-            this.lstsiparis.Location = new System.Drawing.Point(0, 88);
+            this.lstsiparis.Location = new System.Drawing.Point(0, 91);
             this.lstsiparis.Name = "lstsiparis";
             this.lstsiparis.Size = new System.Drawing.Size(800, 330);
             this.lstsiparis.TabIndex = 0;
@@ -167,27 +175,13 @@
             // 
             // lsttemizlik
             // 
+            this.lsttemizlik.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lsttemizlik.HideSelection = false;
-            this.lsttemizlik.Location = new System.Drawing.Point(3, 87);
+            this.lsttemizlik.Location = new System.Drawing.Point(0, 118);
             this.lsttemizlik.Name = "lsttemizlik";
-            this.lsttemizlik.Size = new System.Drawing.Size(794, 320);
+            this.lsttemizlik.Size = new System.Drawing.Size(800, 320);
             this.lsttemizlik.TabIndex = 0;
             this.lsttemizlik.UseCompatibleStateImageBehavior = false;
-            // 
-            // sistemToolStripMenuItem
-            // 
-            this.sistemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.çıkışYapToolStripMenuItem});
-            this.sistemToolStripMenuItem.Name = "sistemToolStripMenuItem";
-            this.sistemToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.sistemToolStripMenuItem.Text = "Sistem";
-            // 
-            // çıkışYapToolStripMenuItem
-            // 
-            this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
-            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
-            this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
             // kathizmet
             // 
@@ -200,6 +194,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "kathizmet";
             this.Text = "Kat Hizmetleri";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.kathizmet_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -216,7 +211,6 @@
         private System.Windows.Forms.ToolStripMenuItem hizmetlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem siparişlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odaTemizlikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem değişimToolStripMenuItem;
         private System.Windows.Forms.Panel pnlsipariş;
         private System.Windows.Forms.Button btnonay;
         private System.Windows.Forms.ListView lstsiparis;

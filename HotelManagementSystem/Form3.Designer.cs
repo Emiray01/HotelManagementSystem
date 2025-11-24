@@ -56,10 +56,11 @@
             // 
             // lstUrun
             // 
+            this.lstUrun.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lstUrun.HideSelection = false;
-            this.lstUrun.Location = new System.Drawing.Point(2, 246);
+            this.lstUrun.Location = new System.Drawing.Point(0, 246);
             this.lstUrun.Name = "lstUrun";
-            this.lstUrun.Size = new System.Drawing.Size(801, 204);
+            this.lstUrun.Size = new System.Drawing.Size(800, 204);
             this.lstUrun.TabIndex = 0;
             this.lstUrun.UseCompatibleStateImageBehavior = false;
             // 
@@ -150,7 +151,7 @@
             this.sistemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -160,7 +161,7 @@
             this.ürünKaldırmaToolStripMenuItem,
             this.ürünGirişiToolStripMenuItem});
             this.ürünToolStripMenuItem.Name = "ürünToolStripMenuItem";
-            this.ürünToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.ürünToolStripMenuItem.Size = new System.Drawing.Size(54, 26);
             this.ürünToolStripMenuItem.Text = "Ürün";
             // 
             // ürünKaldırmaToolStripMenuItem
@@ -182,13 +183,13 @@
             this.sistemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.çıkışYapToolStripMenuItem});
             this.sistemToolStripMenuItem.Name = "sistemToolStripMenuItem";
-            this.sistemToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.sistemToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.sistemToolStripMenuItem.Text = "Sistem";
             // 
             // çıkışYapToolStripMenuItem
             // 
             this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
-            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
             this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
@@ -249,6 +250,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Envanter";
             this.Text = "Envanter";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Envanter_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

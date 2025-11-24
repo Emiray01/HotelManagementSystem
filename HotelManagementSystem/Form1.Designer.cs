@@ -43,13 +43,13 @@
             this.müşteriGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personelGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelpersonel = new System.Windows.Forms.Panel();
+            this.sifgizle = new System.Windows.Forms.Button();
+            this.sifgoster = new System.Windows.Forms.Button();
             this.btngeri2 = new System.Windows.Forms.Button();
             this.panelmusteri = new System.Windows.Forms.Panel();
-            this.btngeri1 = new System.Windows.Forms.Button();
-            this.sifgoster = new System.Windows.Forms.Button();
-            this.sifgizle = new System.Windows.Forms.Button();
-            this.sifgoster1 = new System.Windows.Forms.Button();
             this.sifgizle1 = new System.Windows.Forms.Button();
+            this.sifgoster1 = new System.Windows.Forms.Button();
+            this.btngeri1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelpersonel.SuspendLayout();
             this.panelmusteri.SuspendLayout();
@@ -150,7 +150,7 @@
             this.girişToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -192,6 +192,26 @@
             this.panelpersonel.Size = new System.Drawing.Size(788, 420);
             this.panelpersonel.TabIndex = 9;
             // 
+            // sifgizle
+            // 
+            this.sifgizle.Location = new System.Drawing.Point(140, 73);
+            this.sifgizle.Name = "sifgizle";
+            this.sifgizle.Size = new System.Drawing.Size(21, 23);
+            this.sifgizle.TabIndex = 12;
+            this.sifgizle.Text = "*";
+            this.sifgizle.UseVisualStyleBackColor = true;
+            this.sifgizle.Click += new System.EventHandler(this.sifgizle_Click);
+            // 
+            // sifgoster
+            // 
+            this.sifgoster.Location = new System.Drawing.Point(140, 71);
+            this.sifgoster.Name = "sifgoster";
+            this.sifgoster.Size = new System.Drawing.Size(21, 23);
+            this.sifgoster.TabIndex = 11;
+            this.sifgoster.Text = "*";
+            this.sifgoster.UseVisualStyleBackColor = true;
+            this.sifgoster.Click += new System.EventHandler(this.sifgoster_Click);
+            // 
             // btngeri2
             // 
             this.btngeri2.Location = new System.Drawing.Point(12, 384);
@@ -217,35 +237,15 @@
             this.panelmusteri.Size = new System.Drawing.Size(800, 421);
             this.panelmusteri.TabIndex = 10;
             // 
-            // btngeri1
+            // sifgizle1
             // 
-            this.btngeri1.Location = new System.Drawing.Point(12, 384);
-            this.btngeri1.Name = "btngeri1";
-            this.btngeri1.Size = new System.Drawing.Size(21, 23);
-            this.btngeri1.TabIndex = 9;
-            this.btngeri1.Text = "←";
-            this.btngeri1.UseVisualStyleBackColor = true;
-            this.btngeri1.Click += new System.EventHandler(this.btngeri1_Click);
-            // 
-            // sifgoster
-            // 
-            this.sifgoster.Location = new System.Drawing.Point(140, 71);
-            this.sifgoster.Name = "sifgoster";
-            this.sifgoster.Size = new System.Drawing.Size(21, 23);
-            this.sifgoster.TabIndex = 11;
-            this.sifgoster.Text = "*";
-            this.sifgoster.UseVisualStyleBackColor = true;
-            this.sifgoster.Click += new System.EventHandler(this.sifgoster_Click);
-            // 
-            // sifgizle
-            // 
-            this.sifgizle.Location = new System.Drawing.Point(140, 73);
-            this.sifgizle.Name = "sifgizle";
-            this.sifgizle.Size = new System.Drawing.Size(21, 23);
-            this.sifgizle.TabIndex = 12;
-            this.sifgizle.Text = "*";
-            this.sifgizle.UseVisualStyleBackColor = true;
-            this.sifgizle.Click += new System.EventHandler(this.sifgizle_Click);
+            this.sifgizle1.Location = new System.Drawing.Point(122, 76);
+            this.sifgizle1.Name = "sifgizle1";
+            this.sifgizle1.Size = new System.Drawing.Size(21, 23);
+            this.sifgizle1.TabIndex = 11;
+            this.sifgizle1.Text = "*";
+            this.sifgizle1.UseVisualStyleBackColor = true;
+            this.sifgizle1.Click += new System.EventHandler(this.sifgizle1_Click);
             // 
             // sifgoster1
             // 
@@ -257,15 +257,15 @@
             this.sifgoster1.UseVisualStyleBackColor = true;
             this.sifgoster1.Click += new System.EventHandler(this.sifgoster1_Click);
             // 
-            // sifgizle1
+            // btngeri1
             // 
-            this.sifgizle1.Location = new System.Drawing.Point(122, 76);
-            this.sifgizle1.Name = "sifgizle1";
-            this.sifgizle1.Size = new System.Drawing.Size(21, 23);
-            this.sifgizle1.TabIndex = 11;
-            this.sifgizle1.Text = "*";
-            this.sifgizle1.UseVisualStyleBackColor = true;
-            this.sifgizle1.Click += new System.EventHandler(this.sifgizle1_Click);
+            this.btngeri1.Location = new System.Drawing.Point(12, 384);
+            this.btngeri1.Name = "btngeri1";
+            this.btngeri1.Size = new System.Drawing.Size(21, 23);
+            this.btngeri1.TabIndex = 9;
+            this.btngeri1.Text = "←";
+            this.btngeri1.UseVisualStyleBackColor = true;
+            this.btngeri1.Click += new System.EventHandler(this.btngeri1_Click);
             // 
             // formGiris
             // 
@@ -278,6 +278,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formGiris";
             this.Text = "Giriş";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formGiris_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

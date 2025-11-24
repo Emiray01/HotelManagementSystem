@@ -44,8 +44,8 @@
             this.btnChin = new System.Windows.Forms.Button();
             this.btnChout = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.faturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.faturaYazdırToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.islemlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fatura_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ödemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.krediBankaKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nakitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,8 +54,12 @@
             this.çıkışYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelcheckin = new System.Windows.Forms.Panel();
             this.Geribtn = new System.Windows.Forms.Button();
+            this.faturapnl = new System.Windows.Forms.Panel();
+            this.geribtn1 = new System.Windows.Forms.Button();
+            this.faturalst = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.panelcheckin.SuspendLayout();
+            this.faturapnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstOdaliste
@@ -177,7 +181,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.faturaToolStripMenuItem,
+            this.islemlerToolStripMenuItem,
             this.sistemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -185,21 +189,22 @@
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // faturaToolStripMenuItem
+            // islemlerToolStripMenuItem
             // 
-            this.faturaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.faturaYazdırToolStripMenuItem,
+            this.islemlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fatura_ToolStripMenuItem,
             this.ödemeToolStripMenuItem,
             this.checkinToolStripMenuItem});
-            this.faturaToolStripMenuItem.Name = "faturaToolStripMenuItem";
-            this.faturaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
-            this.faturaToolStripMenuItem.Text = "Fatura";
+            this.islemlerToolStripMenuItem.Name = "islemlerToolStripMenuItem";
+            this.islemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.islemlerToolStripMenuItem.Text = "İşlemler";
             // 
-            // faturaYazdırToolStripMenuItem
+            // fatura_ToolStripMenuItem
             // 
-            this.faturaYazdırToolStripMenuItem.Name = "faturaYazdırToolStripMenuItem";
-            this.faturaYazdırToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.faturaYazdırToolStripMenuItem.Text = "Fatura Yazdır";
+            this.fatura_ToolStripMenuItem.Name = "fatura_ToolStripMenuItem";
+            this.fatura_ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fatura_ToolStripMenuItem.Text = "Fatura";
+            this.fatura_ToolStripMenuItem.Click += new System.EventHandler(this.fatura_ToolStripMenuItem_Click);
             // 
             // ödemeToolStripMenuItem
             // 
@@ -207,26 +212,27 @@
             this.krediBankaKartıToolStripMenuItem,
             this.nakitToolStripMenuItem});
             this.ödemeToolStripMenuItem.Name = "ödemeToolStripMenuItem";
-            this.ödemeToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.ödemeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ödemeToolStripMenuItem.Text = "Ödeme";
             // 
             // krediBankaKartıToolStripMenuItem
             // 
             this.krediBankaKartıToolStripMenuItem.Name = "krediBankaKartıToolStripMenuItem";
-            this.krediBankaKartıToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.krediBankaKartıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.krediBankaKartıToolStripMenuItem.Text = "Kredi/Banka kartı";
             this.krediBankaKartıToolStripMenuItem.Click += new System.EventHandler(this.krediBankaKartıToolStripMenuItem_Click);
             // 
             // nakitToolStripMenuItem
             // 
             this.nakitToolStripMenuItem.Name = "nakitToolStripMenuItem";
-            this.nakitToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.nakitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nakitToolStripMenuItem.Text = "Nakit";
+            this.nakitToolStripMenuItem.Click += new System.EventHandler(this.nakitToolStripMenuItem_Click);
             // 
             // checkinToolStripMenuItem
             // 
             this.checkinToolStripMenuItem.Name = "checkinToolStripMenuItem";
-            this.checkinToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.checkinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.checkinToolStripMenuItem.Text = "Check-in";
             this.checkinToolStripMenuItem.Click += new System.EventHandler(this.checkinToolStripMenuItem_Click);
             // 
@@ -241,7 +247,7 @@
             // çıkışYapToolStripMenuItem
             // 
             this.çıkışYapToolStripMenuItem.Name = "çıkışYapToolStripMenuItem";
-            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.çıkışYapToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.çıkışYapToolStripMenuItem.Text = "Çıkış Yap";
             this.çıkışYapToolStripMenuItem.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem_Click);
             // 
@@ -275,22 +281,54 @@
             this.Geribtn.UseVisualStyleBackColor = true;
             this.Geribtn.Click += new System.EventHandler(this.Geribtn_Click);
             // 
+            // faturapnl
+            // 
+            this.faturapnl.Controls.Add(this.geribtn1);
+            this.faturapnl.Controls.Add(this.faturalst);
+            this.faturapnl.Location = new System.Drawing.Point(0, 31);
+            this.faturapnl.Name = "faturapnl";
+            this.faturapnl.Size = new System.Drawing.Size(800, 419);
+            this.faturapnl.TabIndex = 14;
+            // 
+            // geribtn1
+            // 
+            this.geribtn1.Location = new System.Drawing.Point(12, 189);
+            this.geribtn1.Name = "geribtn1";
+            this.geribtn1.Size = new System.Drawing.Size(24, 23);
+            this.geribtn1.TabIndex = 1;
+            this.geribtn1.Text = "←";
+            this.geribtn1.UseVisualStyleBackColor = true;
+            this.geribtn1.Click += new System.EventHandler(this.geribtn1_Click);
+            // 
+            // faturalst
+            // 
+            this.faturalst.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.faturalst.HideSelection = false;
+            this.faturalst.Location = new System.Drawing.Point(0, 218);
+            this.faturalst.Name = "faturalst";
+            this.faturalst.Size = new System.Drawing.Size(800, 201);
+            this.faturalst.TabIndex = 0;
+            this.faturalst.UseCompatibleStateImageBehavior = false;
+            // 
             // OnBuroform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.faturapnl);
             this.Controls.Add(this.panelcheckin);
             this.Controls.Add(this.lstOdaliste);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "OnBuroform";
             this.Text = "Ön Büro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.OnBuroform_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelcheckin.ResumeLayout(false);
             this.panelcheckin.PerformLayout();
+            this.faturapnl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,8 +351,8 @@
         private System.Windows.Forms.Button btnChin;
         private System.Windows.Forms.Button btnChout;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem faturaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem faturaYazdırToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem islemlerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fatura_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ödemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem krediBankaKartıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nakitToolStripMenuItem;
@@ -323,5 +361,8 @@
         private System.Windows.Forms.ToolStripMenuItem checkinToolStripMenuItem;
         private System.Windows.Forms.Panel panelcheckin;
         private System.Windows.Forms.Button Geribtn;
+        private System.Windows.Forms.Panel faturapnl;
+        private System.Windows.Forms.ListView faturalst;
+        private System.Windows.Forms.Button geribtn1;
     }
 }
