@@ -77,8 +77,7 @@ namespace HotelManagementSystem
             using (SqlConnection conn = new SqlConnection(formGiris.connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(@"SELECT o.odanumara, CASE o.turu  WHEN 1 THEN 'Tek Kişilik' WHEN 2 THEN 'Çift Kişilik' WHEN 3 THEN 'Suit' ELSE 'Diğer'  END AS turu, o.tutar AS odatutari, o.durumu, o.IDfatura,  -- odalar tablosundan alISNULL(m.isim + ' ' + m.soyisim, '') AS MusteriAdi, ISNULL(m.TCNo, '') AS TCNo, CASE WHEN o.IDfatura IS NOT NULL THEN r.giristarih ELSE NULL END AS giristarih,CASE WHEN o.IDfatura IS NOT NULL THEN r.cikistarih ELSE NULL END AS cikistarih,ISNULL(f.tutar, 0) AS faturatutari, ISNULL(f.odemedurumu, 0) AS odemedurumu FROM odalar o LEFT JOIN musteriler m ON m.odanumara = o.odanumara LEFT JOIN rezervasyon r ON r.IDoda = o.IDoda LEFT JOIN fatura f ON f.IDfatura = o.IDfatura", conn);
-
+                SqlCommand cmd = new SqlCommand(@"SELECT o.odanumara,  CASE o.turu   WHEN 1 THEN 'Tek Kişilik'  WHEN 2 THEN 'Çift Kişilik' WHEN 3 THEN 'Suit' ELSE 'Diğer'  END AS turu, o.tutar AS odatutari,  o.durumu,  o.IDfatura,  ISNULL(m.isim + ' ' + m.soyisim, '') AS MusteriAdi, ISNULL(m.TCNo, '') AS TCNo, CASE WHEN o.IDfatura IS NOT NULL THEN r.giristarih ELSE NULL END AS giristarih, CASE WHEN o.IDfatura IS NOT NULL THEN r.cikistarih ELSE NULL END AS cikistarih,ISNULL(f.tutar, 0) AS faturatutari, ISNULL(f.odemedurumu, 0) AS odemedurumu FROM odalar o LEFT JOIN musteriler m ON m.odanumara = o.odanumara LEFT JOIN rezervasyon r ON r.IDoda = o.IDoda LEFT JOIN fatura f ON f.IDfatura = o.IDfatura", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 lstOdaliste.Items.Clear();
 
