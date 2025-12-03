@@ -94,26 +94,33 @@ namespace HotelManagementSystem
 
         private void girisMbtn_Click(object sender, EventArgs e)
         {
+            string girilenID = Mid_txt.Text.Trim();
+            string girilenSifre = Msifre_txt.Text.Trim();
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT IDmusteri FROM musteriler WHERE IDmusteri = @id", conn);
+                cmd.Parameters.AddWithValue("@id", girilenID);
 
-                if (Msifre_txt.Text == sifre && !string.IsNullOrEmpty(sqlIDMusteri))
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && girilenSifre == sifre)
                 {
-                    //MusteriForm musteriForm = new MusteriForm();
-                    //musteriForm.Show();
+                    int seciliMusteriID = Convert.ToInt32(result);
+                    MusteriForm musteriForm = new MusteriForm(seciliMusteriID);
+                    musteriForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    Msifre_txt.Clear();
-                    Mid_txt.Clear();
                     MessageBox.Show("Hatalı Şifre veya ID Girdiniz!");
                 }
-
-                conn.Close();
             }
 
+            // Temizleme işlemi
+            Msifre_txt.Clear();
+            Mid_txt.Clear();
         }
         //şifreyi görünür görünmez yapma
         private void sifgoster_Click(object sender, EventArgs e)

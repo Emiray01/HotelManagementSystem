@@ -25,6 +25,7 @@ namespace HotelManagementSystem
         //loadda odaları listview üzerinden listeliyor
         private void OnBuroform_Load(object sender, EventArgs e)
         {
+            timer1.Interval = 15000;
             timer1.Tick += timer1_Tick;
             timer1.Start();
             faturapnl.Visible = false;
@@ -52,8 +53,7 @@ namespace HotelManagementSystem
             faturalst.Columns.Add("Tarih", 120);
             FaturaListele();
             OdaListele();
-            timer1.Interval = 15000; 
-            timer1.Start();
+
         }
         private void lstOdaliste_SelectedIndexChanged(object sender, EventArgs e)
         {
