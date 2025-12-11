@@ -36,11 +36,6 @@
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.siparispnl = new System.Windows.Forms.Panel();
             this.geri1btn = new System.Windows.Forms.Button();
-            this.istpnl = new System.Windows.Forms.Panel();
-            this.geri2btn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.hizmetlst = new System.Windows.Forms.ListView();
-            this.cmbistek = new System.Windows.Forms.ComboBox();
             this.fiyatlbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.siparisgbtn = new System.Windows.Forms.Button();
@@ -50,8 +45,13 @@
             this.Urunlst = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbsiparis = new System.Windows.Forms.ComboBox();
-            this.glabel = new System.Windows.Forms.Label();
+            this.istpnl = new System.Windows.Forms.Panel();
             this.istgbtn = new System.Windows.Forms.Button();
+            this.geri2btn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.hizmetlst = new System.Windows.Forms.ListView();
+            this.cmbistek = new System.Windows.Forms.ComboBox();
+            this.glabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.siparispnl.SuspendLayout();
             this.istpnl.SuspendLayout();
@@ -75,7 +75,7 @@
             this.siparişlerToolStripMenuItem,
             this.temizlikDeğişimToolStripMenuItem});
             this.işlemlerToolStripMenuItem.Name = "işlemlerToolStripMenuItem";
-            this.işlemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
+            this.işlemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.işlemlerToolStripMenuItem.Text = "İşlemler";
             // 
             // siparişlerToolStripMenuItem
@@ -97,7 +97,7 @@
             this.sisteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.çıkışToolStripMenuItem});
             this.sisteToolStripMenuItem.Name = "sisteToolStripMenuItem";
-            this.sisteToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
+            this.sisteToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.sisteToolStripMenuItem.Text = "Sistem";
             // 
             // çıkışToolStripMenuItem
@@ -135,62 +135,6 @@
             this.geri1btn.Text = "←";
             this.geri1btn.UseVisualStyleBackColor = true;
             this.geri1btn.Click += new System.EventHandler(this.geri1btn_Click);
-            // 
-            // istpnl
-            // 
-            this.istpnl.Controls.Add(this.istgbtn);
-            this.istpnl.Controls.Add(this.geri2btn);
-            this.istpnl.Controls.Add(this.label2);
-            this.istpnl.Controls.Add(this.hizmetlst);
-            this.istpnl.Controls.Add(this.cmbistek);
-            this.istpnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.istpnl.Location = new System.Drawing.Point(0, 30);
-            this.istpnl.Name = "istpnl";
-            this.istpnl.Size = new System.Drawing.Size(1786, 721);
-            this.istpnl.TabIndex = 2;
-            this.istpnl.Visible = false;
-            // 
-            // geri2btn
-            // 
-            this.geri2btn.Location = new System.Drawing.Point(3, 237);
-            this.geri2btn.Name = "geri2btn";
-            this.geri2btn.Size = new System.Drawing.Size(26, 23);
-            this.geri2btn.TabIndex = 5;
-            this.geri2btn.Text = "←";
-            this.geri2btn.UseVisualStyleBackColor = true;
-            this.geri2btn.Click += new System.EventHandler(this.geri2btn_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "İstekler";
-            // 
-            // hizmetlst
-            // 
-            this.hizmetlst.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.hizmetlst.HideSelection = false;
-            this.hizmetlst.Location = new System.Drawing.Point(0, 348);
-            this.hizmetlst.Name = "hizmetlst";
-            this.hizmetlst.Size = new System.Drawing.Size(1786, 373);
-            this.hizmetlst.TabIndex = 3;
-            this.hizmetlst.UseCompatibleStateImageBehavior = false;
-            // 
-            // cmbistek
-            // 
-            this.cmbistek.FormattingEnabled = true;
-            this.cmbistek.Items.AddRange(new object[] {
-            "Değişim",
-            "Bakım",
-            "Temizlik"});
-            this.cmbistek.Location = new System.Drawing.Point(32, 43);
-            this.cmbistek.Name = "cmbistek";
-            this.cmbistek.Size = new System.Drawing.Size(121, 24);
-            this.cmbistek.TabIndex = 0;
-            this.cmbistek.SelectedIndexChanged += new System.EventHandler(this.cmbistek_SelectedIndexChanged);
             // 
             // fiyatlbl
             // 
@@ -281,14 +225,19 @@
             this.cmbsiparis.TabIndex = 0;
             this.cmbsiparis.SelectedIndexChanged += new System.EventHandler(this.cmbsiparis_SelectedIndexChanged);
             // 
-            // glabel
+            // istpnl
             // 
-            this.glabel.AutoSize = true;
-            this.glabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.glabel.Location = new System.Drawing.Point(46, 47);
-            this.glabel.Name = "glabel";
-            this.glabel.Size = new System.Drawing.Size(0, 39);
-            this.glabel.TabIndex = 2;
+            this.istpnl.Controls.Add(this.istgbtn);
+            this.istpnl.Controls.Add(this.geri2btn);
+            this.istpnl.Controls.Add(this.label2);
+            this.istpnl.Controls.Add(this.hizmetlst);
+            this.istpnl.Controls.Add(this.cmbistek);
+            this.istpnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.istpnl.Location = new System.Drawing.Point(0, 30);
+            this.istpnl.Name = "istpnl";
+            this.istpnl.Size = new System.Drawing.Size(1786, 721);
+            this.istpnl.TabIndex = 2;
+            this.istpnl.Visible = false;
             // 
             // istgbtn
             // 
@@ -299,6 +248,57 @@
             this.istgbtn.Text = "İsteği Gönder";
             this.istgbtn.UseVisualStyleBackColor = true;
             this.istgbtn.Click += new System.EventHandler(this.istgbtn_Click);
+            // 
+            // geri2btn
+            // 
+            this.geri2btn.Location = new System.Drawing.Point(3, 237);
+            this.geri2btn.Name = "geri2btn";
+            this.geri2btn.Size = new System.Drawing.Size(26, 23);
+            this.geri2btn.TabIndex = 5;
+            this.geri2btn.Text = "←";
+            this.geri2btn.UseVisualStyleBackColor = true;
+            this.geri2btn.Click += new System.EventHandler(this.geri2btn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "İstekler";
+            // 
+            // hizmetlst
+            // 
+            this.hizmetlst.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.hizmetlst.HideSelection = false;
+            this.hizmetlst.Location = new System.Drawing.Point(0, 348);
+            this.hizmetlst.Name = "hizmetlst";
+            this.hizmetlst.Size = new System.Drawing.Size(1786, 373);
+            this.hizmetlst.TabIndex = 3;
+            this.hizmetlst.UseCompatibleStateImageBehavior = false;
+            // 
+            // cmbistek
+            // 
+            this.cmbistek.FormattingEnabled = true;
+            this.cmbistek.Items.AddRange(new object[] {
+            "Değişim",
+            "Bakım",
+            "Temizlik"});
+            this.cmbistek.Location = new System.Drawing.Point(32, 43);
+            this.cmbistek.Name = "cmbistek";
+            this.cmbistek.Size = new System.Drawing.Size(121, 24);
+            this.cmbistek.TabIndex = 0;
+            this.cmbistek.SelectedIndexChanged += new System.EventHandler(this.cmbistek_SelectedIndexChanged);
+            // 
+            // glabel
+            // 
+            this.glabel.AutoSize = true;
+            this.glabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.glabel.Location = new System.Drawing.Point(46, 47);
+            this.glabel.Name = "glabel";
+            this.glabel.Size = new System.Drawing.Size(0, 38);
+            this.glabel.TabIndex = 2;
             // 
             // MusteriForm
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MusteriForm";
-            this.Text = "Sipariş";
+            this.Text = "Müşteri Paneli";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MusteriForm_Load);
             this.menuStrip1.ResumeLayout(false);

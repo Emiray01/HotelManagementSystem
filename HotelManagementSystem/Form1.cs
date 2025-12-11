@@ -16,6 +16,7 @@ namespace HotelManagementSystem
         //05452545454
         //05454545455
         //05341256324
+        //05345254572
         public static string connectionString = @"Server=EMIRAY;Database=Hoteldb;Trusted_Connection=True;";
         string sqlIDMusteri = "SELECT IDmusteri FROM musteriler WHERE IDmusteri=@id";
         //string sqlPozisyon = "SELECT pozisyon FROM personel WHERE IDpersonel=@id"; // artık telefon üzerinden alınacak
@@ -63,11 +64,11 @@ namespace HotelManagementSystem
                     onBuroform.Show();
                     this.Hide();
                 }
-                else if (pozisyon == "Müdür")
+                else if (pozisyon == "İnsan Kaynakları")
                 {
-                    //mudurForm mudurForm = new mudurForm();
-                    //mudurForm.Show();
-                    //this.Hide();
+                    IKform ikForm = new IKform();
+                    ikForm.Show();
+                    this.Hide();
                 }
                 else if (pozisyon == "Kat Hizmetleri")
                 {
