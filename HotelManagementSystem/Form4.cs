@@ -59,7 +59,7 @@ namespace HotelManagementSystem
                     {
                         while (dr.Read())
                         {
-                            Console.WriteLine($"ID: {dr["IDTemizlik"]}, Durum: {dr["durum"]}");//debug:Debug: veri tabanından çekilen kayıtları kontrol etmek için
+                            Console.WriteLine($"ID: {dr["IDTemizlik"]}, Durum: {dr["durum"]}");//Debug: veri tabanından çekilen kayıtları kontrol etmek için
                             ListViewItem item = new ListViewItem(dr["IDTemizlik"].ToString());
                             item.SubItems.Add(dr["IDoda"].ToString());
                             item.SubItems.Add(Convert.ToDateTime(dr["temizlikTarihi"]).ToString("dd.MM.yyyy HH:mm"));

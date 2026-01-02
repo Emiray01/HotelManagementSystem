@@ -75,7 +75,7 @@
             this.siparişlerToolStripMenuItem,
             this.temizlikDeğişimToolStripMenuItem});
             this.işlemlerToolStripMenuItem.Name = "işlemlerToolStripMenuItem";
-            this.işlemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.işlemlerToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.işlemlerToolStripMenuItem.Text = "İşlemler";
             // 
             // siparişlerToolStripMenuItem
@@ -97,7 +97,7 @@
             this.sisteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.çıkışToolStripMenuItem});
             this.sisteToolStripMenuItem.Name = "sisteToolStripMenuItem";
-            this.sisteToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.sisteToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.sisteToolStripMenuItem.Text = "Sistem";
             // 
             // çıkışToolStripMenuItem

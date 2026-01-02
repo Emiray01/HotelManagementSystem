@@ -16,7 +16,9 @@ namespace HotelManagementSystem
         //05452545454
         //05454545455
         //05341256324
-        //05345254572
+        //05345254572 //İK
+        //05479981523 //Şef
+        //05347852488 //Müdür
         public static string connectionString = @"Server=EMIRAY;Database=Hoteldb;Trusted_Connection=True;";
         string sqlIDMusteri = "SELECT IDmusteri FROM musteriler WHERE IDmusteri=@id";
         //string sqlPozisyon = "SELECT pozisyon FROM personel WHERE IDpersonel=@id"; // artık telefon üzerinden alınacak
@@ -25,7 +27,7 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
-
+        public static string GirisPozisyon;
         String sifre = "12345";
         private void formGiris_Load(object sender, EventArgs e)
         {
@@ -51,6 +53,7 @@ namespace HotelManagementSystem
                         if (reader.Read())
                         {
                             pozisyon = reader["pozisyon"].ToString();
+                            GirisPozisyon = pozisyon;
                         }
                     }
                 }
@@ -64,7 +67,7 @@ namespace HotelManagementSystem
                     onBuroform.Show();
                     this.Hide();
                 }
-                else if (pozisyon == "İnsan Kaynakları")
+                else if (pozisyon == "İnsan Kaynakları" || pozisyon == "Müdür" || pozisyon == "Şef")
                 {
                     IKform ikForm = new IKform();
                     ikForm.Show();
